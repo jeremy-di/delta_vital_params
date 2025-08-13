@@ -1,3 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    background-color: skyblue;
+    font-family: "Lato", sans-serif;
+}
+
+header {
+    position: absolute;
+    width: 100%;
+    height: 8vh;
+    top: 0;
+    left: 0;
+    background-color: #F5A61D;
+    color: #fff;
+    padding: 0 2rem;
+}
+
+nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.basculer {
+    display: none;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    width: 550px;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+    background-color: #000;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+}
+
+.logo {
+    font-size: 2rem;
+}
+
+.para_container {
+        border: solid 2px #F5A61D;
+        text-align: center;
+        margin-top: 5rem;
+        padding: 1rem;
+    }
+
+    .para_container h1 {
+        margin-bottom: 1rem;
+    }
+
+    .para_label {
+        display: block;
+        margin-bottom: 1rem;
+    }
+    
+    .para_input {
+        width: 100%;
+        font-size: 2rem;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+
+    .para_btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 1rem;
+        border-radius: 5px;
+        background-color: #F5A61D;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 2rem;
+    }
+    
+    .para_other_btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 1rem;
+        border-radius: 5px;
+        background-color: green;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 2rem;
+        text-decoration: none;
+        display: block;
+    }
+
+    .para_list_container {
+        margin-top: 5rem;
+        text-align: center;
+    }
+
+    .para_list_container table {
+        margin: auto;
+    }
+    
+    .para_list_container table thead tr {
+        background-color: #F5A61D;
+        padding: 1em;
+    }
+    .para_list_container table tbody tr td {
+        border: solid 1px #F5A61D;
+        padding: 0.5em;
+    }
+
+    .para_list_button {
+        text-decoration: none;
+        background-color: green;
+        padding: 0.5em;
+        color: #fff;
+        font-weight: bold;
+        width: 100vh;
+    }
+
+    .para_new_button {
+        background-color: #F5A61D;
+        padding: 1em;
+        margin: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        color: #fff;
+        width: 25%;
+    }
+    
+    .para_new_button a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+@media all and (max-width : 1100px) {
+    .basculer {
+        display: block;
+        font-size: 2rem;
+        cursor: pointer;
+        position: relative;
+        z-index: 20;
+    }
+
+    .ouvrir {
+        display: block;
+    }
+
+    .fermer {
+        display: none;
+    }
+
+    .open .ouvrir {
+        display: none;
+    }
+
+    .open .fermer {
+        display: block;
+    }
+
+    .menu {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #F5A61D;
+        flex-direction: column;
+        padding: 2rem;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: 1s;
+    }
+
+    .logo {
+        position: relative;
+        z-index: 20;
+    }
+
+    .open .menu {
+        transform: translateX(0);
+    }
+
+    .menu li a {
+        font-size: 2rem;
+    }
+
+    .para_container {
+        border: solid 2px #F5A61D;
+        text-align: center;
+        margin-top: 5rem;
+        padding: 1rem;
+    }
+
+    .para_container h1 {
+        margin-bottom: 1rem;
+    }
+
+    .para_label {
+        display: block;
+        margin-bottom: 1rem;
+    }
+    
+    .para_input {
+        width: 100%;
+        font-size: 2rem;
+        border-radius: 5px;
+        margin-bottom: 1rem;
+    }
+
+    .para_btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 1rem;
+        border-radius: 5px;
+        background-color: #F5A61D;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 2rem;
+    }
+    
+    .para_other_btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 1rem;
+        border-radius: 5px;
+        background-color: green;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 2rem;
+        text-decoration: none;
+        display: block;
+    }
+    .para_delete_btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 1rem;
+        border-radius: 5px;
+        background-color: red;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 2rem;
+        text-decoration: none;
+        display: block;
+    }
+
+    .para_list_container {
+        margin-top: 5rem;
+        text-align: center;
+    }
+
+    .para_list_container table {
+        margin: auto;
+    }
+    
+    .para_list_container table thead tr {
+        background-color: #F5A61D;
+        padding: 1em;
+    }
+    .para_list_container table tbody tr td {
+        border: solid 1px #F5A61D;
+        padding: 0.5em;
+    }
+
+    .para_list_button {
+        text-decoration: none;
+        background-color: green;
+        padding: 0.5em;
+        color: #fff;
+        font-weight: bold;
+        width: 100vh;
+    }
+
+    .para_new_button {
+        background-color: #F5A61D;
+        padding: 1em;
+        margin: auto;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border-radius: 5px;
+        color: #fff;
+        width: 25%;
+    }
+    
+    .para_new_button a {
+        color: #fff;
+        text-decoration: none;
+        
+    }
 }

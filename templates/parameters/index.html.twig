@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des paramètres{% endblock %}
+
+{% block body %}
+    <div class="para_list_container">
+        <h1>Liste des paramètres</h1>
+
+        <div class="para_new_button">
+            <a href="{{ path('app_parameters_new') }}">Ajouter <i class="fa-solid fa-plus"></i></a>
+        </div>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Prise</th>
+                    <th>Systole</th>
+                    <th>Diastole</th>
+                    <th>SPO²</th>
+                    <th>BPM</th>
+                    <th>action</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for parameter in parameters %}
+                <tr>
+                    <td>{{ parameter.date ? parameter.date|date('d/m/y') : '' }}</td>
+                    <td>{{ parameter.stepOfDay }}</td>
+                    <td>{{ parameter.systole }}</td>
+                    <td>{{ parameter.diastole }}</td>
+                    <td>{{ parameter.spo2 }}</td>
+                    <td>{{ parameter.heartRate }}</td>
+                    <td>
+                        <a class="para_list_button" href="{{ path('app_parameters_edit', {'id': parameter.id}) }}">Editer</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="8">Pas de données</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}
